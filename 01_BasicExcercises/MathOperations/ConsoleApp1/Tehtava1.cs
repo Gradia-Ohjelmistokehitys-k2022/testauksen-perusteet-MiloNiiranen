@@ -1,4 +1,6 @@
 ﻿
+using System.Linq;
+
 public static class MathOperations
 {
 
@@ -30,7 +32,6 @@ public static class MathOperations
     {
         double pieninArvo = lista.Min();
         return pieninArvo;
-
     }
 
     public static int ListanSuurinArvo(List<int> lista)
@@ -38,4 +39,10 @@ public static class MathOperations
         int suurinArvo = lista.Max();
         return suurinArvo;
     }
-}
+
+    public static float ListanKeskiArvo(List<float> lista)
+    {
+        float keskiarvo = lista.Average(); ;
+        return keskiarvo; 
+    }
+}   

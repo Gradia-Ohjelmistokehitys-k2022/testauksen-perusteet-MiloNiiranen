@@ -1,5 +1,6 @@
 using Microsoft.VisualStudio.TestPlatform.TestHost;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 
 namespace MathTests
 {
@@ -61,7 +62,7 @@ namespace MathTests
         }
 
         [TestMethod]
-        public void ListanSuurinarvo_Kokonaisluku_PalauttaaListanSuurinmanArvon()
+        public void ListanSuurinarvo_KokonaisLuku_PalauttaaListanSuurinmanArvon()
         {
             // arrange
             List<int> listanArvot = new List<int> { 2, 1, 3, 2, 4 };
@@ -71,6 +72,18 @@ namespace MathTests
 
             // assert
             Assert.AreEqual(4, suurinArvo);
+        }
+        [TestMethod]
+        public void ListanKeskiArvo_LiukuLuku_PalauttaaListanKeskiArvon()
+        {
+            // arrange
+            List<float> listanArvot = new List<float> { 1.0f, 3.5f, 2.9f };
+
+            // act
+            float keskiArvo = MathOperations.ListanKeskiArvo(listanArvot);
+
+            // assert
+            Assert.AreEqual(2.4666666984558105, keskiArvo);
         }
     }
 }
