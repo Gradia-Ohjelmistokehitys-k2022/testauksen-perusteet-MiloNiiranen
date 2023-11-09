@@ -33,5 +33,9 @@ public static class MathOperations
 
     }
 
-
+    public static int ListanSuurinArvo(List<int> lista)
+    {
+        int suurinArvo = lista.Max();
+        return suurinArvo;
+    }
 }

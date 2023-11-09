@@ -59,5 +59,18 @@ namespace MathTests
             // assert
             Assert.AreEqual(1.5, pieninarvo);
         }
+
+        [TestMethod]
+        public void ListanSuurinarvo_Kokonaisluku_PalauttaaListanSuurinmanArvon()
+        {
+            // arrange
+            List<int> listanArvot = new List<int> { 2, 1, 3, 2, 4 };
+
+            // act
+            int suurinArvo = MathOperations.ListanSuurinArvo(listanArvot);
+
+            // assert
+            Assert.AreEqual(4, suurinArvo);
+        }
     }
 }
