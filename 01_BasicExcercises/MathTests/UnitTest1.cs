@@ -50,10 +50,11 @@ namespace MathTests
         public void ListanPieninArvo_DesimaaliLuku_PalautaaPienimmänLuvunListasta()
         {
             // arrange
-            double listanArvo = 1.5;
+            List<double> listanArvot = new List<double> { 2.3, 1.5, 3.7, 2.0, 4.2 };
+
 
             // act
-            double pieninarvo = MathOperations.ListanPieninArvo(listanArvo);
+            double pieninarvo = MathOperations.ListanPieninArvo(listanArvot);
 
             // assert
             Assert.AreEqual(1.5, pieninarvo);

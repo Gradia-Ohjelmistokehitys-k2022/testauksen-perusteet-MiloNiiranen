@@ -32,4 +32,6 @@ public static class MathOperations
         return pieninArvo;
 
     }
+
+
 }
