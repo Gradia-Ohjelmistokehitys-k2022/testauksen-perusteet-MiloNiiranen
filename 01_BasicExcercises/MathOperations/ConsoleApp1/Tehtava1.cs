@@ -42,7 +42,7 @@ public static class MathOperations
 
     public static float ListanKeskiArvo(List<float> lista)
     {
-        float keskiarvo = lista.Average(); ;
+        float keskiarvo = lista.Average();
         return keskiarvo; 
     }
 }   

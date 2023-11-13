@@ -1,13 +1,13 @@
-﻿using System.Reflection;
+﻿using System.IO;
+using System.Reflection;
 namespace FileOperations3
 {
-    internal class Program
+    public static class Program
     {
 
         public static void Main(string[] args)
         {
-            
-            
+           
         }
 
         private static void PrintFile(List<string> systemConfig)
