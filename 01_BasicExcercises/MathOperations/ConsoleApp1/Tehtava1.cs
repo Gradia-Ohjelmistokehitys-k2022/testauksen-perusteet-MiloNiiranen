@@ -23,12 +23,7 @@ public static class MathOperations
         {
             return 0;
         }
-        else
-        {
-            return tulos;
-        }
-       
-
+        return tulos;
     }
 
     public static double LuvunNeliöJuuri(int luku)

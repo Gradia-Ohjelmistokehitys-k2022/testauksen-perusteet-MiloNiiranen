@@ -25,13 +25,13 @@ namespace MathTests
         public void ToisenPotensiin_Yhdell‰Kokonaisluvulla_Palauttaakokonaisluvun()
         {
             // arrange
-            int lukuPotenssinKahdella = 2;
+            int lukuPotenssinKahdella = 102;
 
             // act
             int tulos = MathOperations.ToisenPotensiin(lukuPotenssinKahdella);
 
             // assert
-            Assert.AreEqual(4, tulos);
+            Assert.AreEqual(10404, tulos);
         }
 
         [TestMethod]
