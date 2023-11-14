@@ -45,7 +45,7 @@ namespace FileOperationsTest
         public void PrintFile_WritesInConsole_ExpectedResultNotEmpty()
         {
             // arrange
-            List<string> systemConfig = new List<string> {  };
+            List<string> systemConfig = new List<string> { "Moi", "Hei" };
 
 
             // act
