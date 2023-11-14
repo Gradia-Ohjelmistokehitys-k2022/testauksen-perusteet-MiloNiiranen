@@ -7,10 +7,10 @@ namespace FileOperations3
 
         public static void Main(string[] args)
         {
-           
+            
         }
 
-        private static void PrintFile(List<string> systemConfig)
+        public static void PrintFile(List<string> systemConfig)
         {
             foreach (var item in systemConfig)
             {

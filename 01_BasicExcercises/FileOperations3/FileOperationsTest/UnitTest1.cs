@@ -32,7 +32,7 @@ namespace FileOperationsTest
             string winDir = "C:\\Windows";
             string path = "\\Moi.txt";
 
-            // Act and Assert
+            // act and assert
             Assert.ThrowsException<FileNotFoundException>(() =>
             {
                 systemConfig = FileOperations3.Program.ReadFile(new List<string>(), winDir, path);
@@ -41,6 +41,18 @@ namespace FileOperationsTest
 
         }
 
+        [TestMethod]
+        public void PrintFile_WritesInConsole_ExpectedResultNotEmpty()
+        {
+            // arrange
+            List<string> systemConfig = new List<string> {  };
 
+
+            // act
+            FileOperations3.Program.PrintFile(systemConfig);
+
+            // assert
+            Assert.IsTrue (systemConfig.Count > 0);
+        }
     }
 }
