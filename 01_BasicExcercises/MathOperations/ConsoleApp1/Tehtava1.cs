@@ -18,7 +18,16 @@ public static class MathOperations
     public static int ToisenPotensiin(int luku)
     {
         int tulos = luku * luku;
-        return tulos;
+
+        if (luku > 100)
+        {
+            return 0;
+        }
+        else
+        {
+            return tulos;
+        }
+       
 
     }
 
