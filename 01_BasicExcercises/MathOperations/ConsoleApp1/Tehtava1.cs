@@ -18,8 +18,12 @@ public static class MathOperations
     public static int ToisenPotensiin(int luku)
     {
         int tulos = luku * luku;
-        return tulos;
 
+        if (luku > 100)
+        {
+            return 0;
+        }
+        return tulos;
     }
 
     public static double LuvunNeliöJuuri(int luku)
@@ -42,7 +46,7 @@ public static class MathOperations
 
     public static float ListanKeskiArvo(List<float> lista)
     {
-        float keskiarvo = lista.Average(); ;
+        float keskiarvo = lista.Average();
         return keskiarvo; 
     }
 }   
