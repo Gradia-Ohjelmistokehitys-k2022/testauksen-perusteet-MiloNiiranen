@@ -13,7 +13,7 @@ namespace BankTests
             double beginningBalance = 11.99;
             double debitAmount = 4.55;
             double expected = 7.44;
-            BankAccount account = new BankAccount("Mr. Bryan Walton", beginningBalance);
+            BankAccount account = new BankAccount(beginningBalance);
 
             // Act
             account.Debit(debitAmount);
@@ -29,7 +29,7 @@ namespace BankTests
             // Arrange
             double beginningBalance = 11.99;
             double debitAmount = -100.00;
-            BankAccount account = new BankAccount("Mr. Bryan Walton", beginningBalance);
+            BankAccount account = new BankAccount(beginningBalance);
 
             // Act and assert
             Assert.ThrowsException<System.ArgumentOutOfRangeException>(() => account.Debit(debitAmount));
@@ -41,7 +41,7 @@ namespace BankTests
             // Arrange
             double beginningBalance = 11.99;
             double debitAmount = -20.0;
-            BankAccount account = new BankAccount("Mr. Bryan Walton", beginningBalance);
+            BankAccount account = new BankAccount(beginningBalance);
 
             // Act
             try
@@ -63,7 +63,7 @@ namespace BankTests
             // Arrange
             double beginningBalance = 11.99;
             double creditAmount = -100.0;
-            BankAccount account = new BankAccount("Mr. Bryan Walton", beginningBalance);
+            BankAccount account = new BankAccount(beginningBalance);
 
             // Act
             try
@@ -79,6 +79,26 @@ namespace BankTests
                 return;
             }
             Assert.Fail("The expected exception was not thrown.");
+        }
+
+        [TestMethod]
+        public void DeleteBankAccount_RemovesAccountFromList()
+        {
+            // Arrange
+            BankCustomer.m_Accounts = new List<BankAccount>();
+
+            BankCustomer customer = new BankCustomer("John Doe");
+            BankAccount account1 = customer.CreateBankAccount();
+            BankAccount account2 = customer.CreateBankAccount();
+            BankAccount account3 = customer.CreateBankAccount();
+
+            // Act
+            BankCustomer.DeleteBankAccount(account2.AccountNumber);
+
+            // Assert
+            Assert.AreEqual(2, BankCustomer.m_Accounts.Count);
+            Assert.IsFalse(BankCustomer.m_Accounts.Contains(account2));
+
         }
     }
 }
