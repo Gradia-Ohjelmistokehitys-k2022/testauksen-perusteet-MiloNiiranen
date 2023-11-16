@@ -100,5 +100,20 @@ namespace BankTests
             Assert.IsFalse(BankCustomer.m_Accounts.Contains(account2));
 
         }
+
+        [TestMethod]
+        public void CreateBankAccount_AddsNewAccountToAccountsList()
+        {
+            // Arrange
+            BankCustomer.m_Accounts = new List<BankAccount>();
+            BankCustomer customer = new BankCustomer("John River");
+
+            // Act
+            BankAccount newAccount = customer.CreateBankAccount();
+
+            // Assert
+            Assert.IsNotNull(newAccount);
+            CollectionAssert.Contains(BankCustomer.m_Accounts, newAccount);
+        }
     }
 }
