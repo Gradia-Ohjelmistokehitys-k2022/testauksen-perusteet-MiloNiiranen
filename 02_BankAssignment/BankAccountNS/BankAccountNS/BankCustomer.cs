@@ -33,7 +33,5 @@ namespace BankAccountNS
         {
             m_Accounts.RemoveAll(account => account.AccountNumber == accountNumber);
         }
-
-
     }
 }

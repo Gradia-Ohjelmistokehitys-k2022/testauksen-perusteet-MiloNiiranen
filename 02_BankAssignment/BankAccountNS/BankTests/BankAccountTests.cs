@@ -115,5 +115,20 @@ namespace BankTests
             Assert.IsNotNull(newAccount);
             CollectionAssert.Contains(BankCustomer.m_Accounts, newAccount);
         }
+
+        [TestMethod]
+        public void TransferToAccount_TransfersMoneySuccessfully()
+        {
+            // Arrange
+            BankAccount senderAccount = new BankAccount(100.0);
+            BankAccount destinationAccount = new BankAccount(50.0);
+
+            // Act
+            TransferToAccount(20.0, senderAccount, destinationAccount);
+
+            // Assert
+            Assert.AreEqual(80.0, senderAccount.Balance, "Sender account balance should be updated.");
+            Assert.AreEqual(70.0, destinationAccount.Balance, "Destination account balance should be updated.");
+        }
     }
 }

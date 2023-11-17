@@ -51,5 +51,16 @@
 
             m_balance += amount;
         }
+
+        public static void TransferToAccount(double amount, BankAccount senderAccount, BankAccount destinationAccount)
+        {
+            if (senderAccount.Balance < amount)
+            {
+                throw new InvalidOperationException("Insufficient funds for the transfer.");
+            }
+
+            senderAccount.Debit(amount);
+            destinationAccount.Credit(amount);
+        }
     }
 }
