@@ -117,18 +117,30 @@ namespace BankTests
         }
 
         [TestMethod]
-        public void TransferToAccount_TransfersMoneySuccessfully()
+        public void TransferToAccount_TransfersMoneyToOtherAccount()
         {
             // Arrange
             BankAccount senderAccount = new BankAccount(100.0);
             BankAccount destinationAccount = new BankAccount(50.0);
 
             // Act
-            TransferToAccount(20.0, senderAccount, destinationAccount);
+            BankAccount.TransferToAccount(100.0, senderAccount, destinationAccount);
 
             // Assert
-            Assert.AreEqual(80.0, senderAccount.Balance, "Sender account balance should be updated.");
-            Assert.AreEqual(70.0, destinationAccount.Balance, "Destination account balance should be updated.");
+            Assert.AreEqual(0.0, senderAccount.Balance, "Sender account balance should be updated.");
+            Assert.AreEqual(150.0, destinationAccount.Balance, "Destination account balance should be updated.");
+        }
+
+        [TestMethod]
+        public void Customer_CustomerName_TestsThatCustomerNameIsRight()
+        {
+            // Arrange
+
+
+            // Act
+
+
+            // Assert
         }
     }
 }
