@@ -130,17 +130,5 @@ namespace BankTests
             Assert.AreEqual(0.0, senderAccount.Balance, "Sender account balance should be updated.");
             Assert.AreEqual(150.0, destinationAccount.Balance, "Destination account balance should be updated.");
         }
-
-        [TestMethod]
-        public void Customer_CustomerName_TestsThatCustomerNameIsRight()
-        {
-            // Arrange
-
-
-            // Act
-
-
-            // Assert
-        }
     }
 }
