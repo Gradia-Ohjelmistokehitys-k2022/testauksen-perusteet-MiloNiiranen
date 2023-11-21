@@ -31,7 +31,6 @@ namespace TestingTodoListApp
         public void RemoveItemFromList(TodoTask item)
         {
             _todoItems.Remove(item with { Id = _taskCounter--});
-
         }
 
         public void CompleteItem(int id)
