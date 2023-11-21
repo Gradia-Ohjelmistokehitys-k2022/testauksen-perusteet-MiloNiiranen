@@ -7,13 +7,16 @@ using System.Xml.Linq;
 
 namespace TestingTodoListApp
 {
-    public record TodoTask(string TaskDescription) // ota selvää recordin toiminnasta
+    public record TodoTask
     {
-        public int Id { get; init; } //init makes property immutable which means you cannot change value with set afterwards.
-
+        public int Id  { get; set; }
+        public string TaskDescription { get; init; }
         public bool IsCompleted { get; init; }
 
-
+        public TodoTask(string taskDescription)
+        {
+            TaskDescription = taskDescription;
+        }
         public override string ToString()
         {
             return $"Id: {Id} + Task: {TaskDescription} + Did you do it?: {IsCompleted}";

@@ -24,15 +24,13 @@ namespace TestingTodoListApp
         public void AddItemToList(TodoTask item)
         {
 
-            _todoItems.Add(item);
-            _taskCounter++;
+            _todoItems.Add(item with { Id = _taskCounter++ });
 
         }
 
         public void RemoveItemFromList(TodoTask item)
         {
-            _todoItems.Remove(item);
-            _taskCounter--;
+            _todoItems.Remove(item with { Id = _taskCounter-- });
         }
 
         public void CompleteItem(int id)
