@@ -10,7 +10,7 @@ namespace TestingTodoListApp
     {
 
         private readonly List<TodoTask> _todoItems;
-        private int _taskCounter = 1;
+        private int _taskCounter = 0;
         public IEnumerable<TodoTask> All => _TodoItems; //https://learn.microsoft.com/en-us/dotnet/api/system.linq.enumerable.all?view=net-6.0
         public List<TodoTask> _TodoItems { get => _todoItems;}
        
@@ -24,13 +24,15 @@ namespace TestingTodoListApp
         public void AddItemToList(TodoTask item)
         {
 
-            _todoItems.Add(item with { Id = _taskCounter++ });
+            _todoItems.Add(item);
+            _taskCounter++;
 
         }
 
         public void RemoveItemFromList(TodoTask item)
         {
-            _todoItems.Remove(item with { Id = _taskCounter--});
+            _todoItems.Remove(item);
+            _taskCounter--;
         }
 
         public void CompleteItem(int id)
