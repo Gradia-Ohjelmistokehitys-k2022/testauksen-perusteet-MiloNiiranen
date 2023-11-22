@@ -8,7 +8,6 @@ namespace TodoListTests
         public void AddItemToList_AddsTaskAndIncrementsId()
         {
             // Arrange
-            List<TodoTask> tasks = new List<TodoTask>();
             TodoList todoList = new TodoList();
             TodoTask task = new TodoTask("Siivoa huone");
             TodoTask task2 = new TodoTask("Siivoa keittiö");
@@ -35,6 +34,21 @@ namespace TodoListTests
 
             // Assert
             Assert.AreEqual(0, todoList._TodoItems.Count);
+        }
+
+        [TestMethod]
+        public void CompleteItem_MarksTaskAsCompleted()
+        {
+            // Arrange
+            TodoList todoList = new TodoList();
+            TodoTask task = new TodoTask("Siivoa huone");
+            todoList.AddItemToList(task);
+
+            // Act
+            todoList.CompleteItem(task.Id);
+
+            // Assert
+            Assert.IsTrue(task.IsCompleted);
         }
     }
 }
