@@ -4,7 +4,7 @@ namespace TodoListTests
     [TestClass]
     public class UnitTest1
     {
-        [TestMethod]
+        [TestMethod] 
         public void AddItemToList_AddsTaskAndIncrementsId()
         {
             // Arrange
@@ -28,6 +28,7 @@ namespace TodoListTests
             TodoList todoList = new TodoList();
             TodoTask task = new TodoTask("Siivoa huone");
             todoList.AddItemToList(task);
+            
 
             // Act
             todoList.RemoveItemFromList(task);
@@ -48,7 +49,8 @@ namespace TodoListTests
             todoList.CompleteItem(task.Id);
 
             // Assert
-            Assert.IsTrue(task.IsCompleted);
+            TodoTask completedTask = todoList._TodoItems.FirstOrDefault(x => x.Id == task.Id);
+            Assert.IsNull(completedTask);
         }
     }
 }

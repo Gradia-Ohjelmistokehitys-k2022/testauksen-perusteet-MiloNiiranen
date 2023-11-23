@@ -7,18 +7,18 @@ using System.Xml.Linq;
 
 namespace TestingTodoListApp
 {
-    public record TodoTask(string TaskDescription) 
+    public record TodoTask(string TaskDescription)
     {
         public int Id { get; init; }
         public bool IsCompleted { get; set; }
-
-
+        public string TaskDescription { get; init; }
         public override string ToString()
         {
             return $"Id: {Id} + Task: {TaskDescription} + Did you do it?: {IsCompleted}";
         }
-    }
 
+
+    }
 }
 
 

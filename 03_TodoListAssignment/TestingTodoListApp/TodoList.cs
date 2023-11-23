@@ -23,9 +23,7 @@ namespace TestingTodoListApp
         }
         public void AddItemToList(TodoTask item)
         {
-
-            _todoItems.Add(item with { Id = _taskCounter++ });
-
+            _todoItems.Add(new TodoTask(item.TaskDescription) { Id = _taskCounter++ });
         }
 
         public void RemoveItemFromList(TodoTask item)
@@ -35,11 +33,11 @@ namespace TestingTodoListApp
 
         public void CompleteItem(int id)
         {
-            // remove the item
-            var item = _todoItems.First(x => x.Id == id);
-            item.IsCompleted = true;
-            
-           
+            var item = _todoItems.FirstOrDefault(x => x.Id == id);
+            if (item != null)
+            {
+                _todoItems.Remove(item);
+            }
         }
     }
 }
