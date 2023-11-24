@@ -5,21 +5,16 @@ using TestingTodoListApp;
 namespace TodoListNS
 {
 
-    /// <summary>
-    /// Todo list. You can inserts things to do. Delete them. Complete them.
-    /// </summary>
     public class Program
     {
-
         public static void Main()
         {
             TodoList todoList = new TodoList();
 
             todoList.AddItemToList(new TodoTask("Do the dishes"));
-          
             todoList.AddItemToList(new TodoTask("Wash your clothes"));
-            var list = todoList.All; //for iterations
-            var anotherList = todoList._TodoItems; //original style of getting list
+            var list = todoList.All;
+            var anotherList = todoList._TodoItems;
             foreach (var item in list)
             {
                 Console.WriteLine(item);

@@ -124,7 +124,11 @@ namespace BankTests
             BankAccount destinationAccount = new BankAccount(50.0);
 
             // Act
+<<<<<<< HEAD
+            BankAccount.TransferToAccount(20.0, senderAccount, destinationAccount);
+=======
             BankAccount.TransferToAccount(100.0, senderAccount, destinationAccount);
+>>>>>>> 2410d76ac88f181a555db532b1d0d1fdbf7b009f
 
             // Assert
             Assert.AreEqual(0.0, senderAccount.Balance, "Sender account balance should be updated.");
