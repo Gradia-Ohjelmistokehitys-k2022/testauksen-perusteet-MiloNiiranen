@@ -4,7 +4,7 @@
 namespace WareHouse
 {
 
-    public class WareHouse
+    public class WareHouseMethods
     {
 
         private List<Stock> _stockOfItems;
@@ -20,7 +20,7 @@ namespace WareHouse
             _stockOfItems.Add(item3);
         }
 
-        public WareHouse()
+        public WareHouseMethods()
         {
 
         }
