@@ -38,26 +38,23 @@ namespace WareHouse
 
         public void TakeFromStock(string itemName, int quantity)
         {
-            Stock? stock = null;
-            if (InStock(itemName))
-            {
+            Stock stock = _stockOfItems.FirstOrDefault(item => item.ItemName == itemName && item.Quantity >= quantity); // Varmistetaan että valitaan oikea tuote ja että varastossa on tarpeeksi tuotteita.
 
-                stock = _stockOfItems.FirstOrDefault(item => item.Quantity > 0);
+            if (stock != null)
+            {
                 stock.Quantity -= quantity;
             }
             else
             {
-                throw new Exception("Oversold " + stock.ItemName);
+                throw new Exception($"Not enough stock for {itemName}");
             }
         }
 
         public int StockCount(string itemName)
         {
             var matches = _stockOfItems.Where(item => item.ItemName == itemName);
-            return matches.Count();
+            return matches.Sum(item => item.Quantity);
         }
-
-    }
-
+    }  
 }
 
