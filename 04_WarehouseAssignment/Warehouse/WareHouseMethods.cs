@@ -55,6 +55,10 @@ namespace WareHouse
             var matches = _stockOfItems.Where(item => item.ItemName == itemName);
             return matches.Sum(item => item.Quantity);
         }
+        public int StockCountAllDistinctItems()
+        {
+            return _stockOfItems.Select(item => item.ItemName).Distinct().Count(); // Tein tämän, että voin testata että luo ne tuote tyypit
+        }
     }  
 }
 
